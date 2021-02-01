@@ -12,7 +12,7 @@ weatherform.addEventListener('submit', (e) => {         //this is for not refres
     var locationVar = search.value
     p1.textContent='Loading...'
     p2.textContent=''
-    fetch('http://localhost:3000/weather?address='+locationVar+'').then((response) => {
+    fetch('/weather?address='+locationVar+'').then((response) => {
         response.json().then((data) => {
             if(data.error){
                 p1.textContent=data.error
