@@ -50,7 +50,8 @@ app.get('/weather', (req,res) => {
                      res.send({
                          location: location,
                          forecast : forecastdata.temperature +' degree',
-                         time : data.localtime
+                         time : forecastdata.time,
+                         weather_description : forecastdata.weather_description
                      })
                })
         })

@@ -8,7 +8,9 @@ const weatherstack = (latitude,longitude,callback) =>{
            callback('Unable to detect please change the input',undefined)
        }else{
            callback(undefined,{
-               temperature : response.body.current.temperature
+               temperature : response.body.current.temperature,
+               time:response.body.location.localtime,
+               weather_description : response.body.current.weather_descriptions[0]
            })
        }
    })
