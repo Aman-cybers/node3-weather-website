@@ -40,12 +40,12 @@ app.get('/weather', (req,res) => {
     }else{
         geocode(req.query.address,(error,data)=>{
             if(error){
-                return res.send(error)
+                return res.send({error})
             }
               const {latitude,longitude,location} = data                              //destructuring the objects
                  weatherstack(latitude,longitude,(error,forecastdata)=>{
                      if(error){
-                         return res.send(error)
+                         return res.send({error})
                      }
                      res.send({
                          location: location,
