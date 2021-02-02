@@ -10,7 +10,8 @@ const weatherstack = (latitude,longitude,callback) =>{
            callback(undefined,{
                temperature : response.body.current.temperature,
                time:response.body.location.localtime,
-               weather_description : response.body.current.weather_descriptions[0]
+               weather_description : response.body.current.weather_descriptions[0],
+               country : response.body.location.country
            })
        }
    })
